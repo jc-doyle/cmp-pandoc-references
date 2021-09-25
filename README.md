@@ -2,6 +2,11 @@
 
 A source for [nvim-cmp](https://github.com/hrsh7th/nvim-cmp), providing completion for bibliography, reference and cross-ref items.
 
+## Demo
+![cmp-pandoc-references](https://user-images.githubusercontent.com/59124867/134782887-33872ae0-a23e-4f5b-99cd-74c3b0e6f497.gif)
+
+Note I have overridden the `ItemKinds`, they are set to `cmp.lsp.CompletionItemKind.Reference` by default.
+
 ## Installation & Usage
 
 Assuming Packer:
