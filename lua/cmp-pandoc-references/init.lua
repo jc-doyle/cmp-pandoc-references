@@ -22,3 +22,5 @@ source.complete = function(self, request, callback)
     callback(self.items)
   end
 end
+
+return source
