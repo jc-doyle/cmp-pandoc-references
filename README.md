@@ -1,6 +1,6 @@
 # cmp-pandoc-references
 
-A source for [nvim-cmp](https://github.com/hrsh7th/nvim-cmp), providing completion for bibliography and cross-ref items.
+A source for [nvim-cmp](https://github.com/hrsh7th/nvim-cmp), providing completion for bibliography, reference and cross-ref items.
 
 ## Installation & Usage
 
@@ -20,7 +20,7 @@ Add the source:
 ``` lua
 require('cmp').setup {
   sources = {
-    { name = 'pandoc-references' }
+    { name = 'pandoc_references' }
   }
 }
 ```

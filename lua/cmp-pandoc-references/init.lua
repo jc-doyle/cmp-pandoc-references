@@ -5,12 +5,13 @@ source.new = function()
 	return setmetatable({}, {__index = source})
 end
 
+-- Add another filetype if needed
 source.is_available = function()
 	return vim.o.filetype == 'pandoc' or vim.o.filetype == 'markdown'
 end
 
 source.get_keyword_pattern = function()
-	return '[@#][^[:blank:]]*'
+	return '[@][^[:blank:]]*'
 end
 
 source.complete = function(self, request, callback)
