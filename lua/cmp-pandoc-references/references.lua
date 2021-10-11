@@ -15,8 +15,12 @@ end
 
 -- Remove newline & excessive whitespace
 local function clean(text)
-  text = text:gsub('\n', ' ')
-  return text:gsub('%s%s+', ' ')
+  if text then
+    text = text:gsub('\n', ' ')
+    return text:gsub('%s%s+', ' ')
+  else
+    return text
+  end
 end
 
 -- Parses the .bib file, formatting the completion item
