@@ -14,9 +14,6 @@ Assuming Packer:
 ``` lua
 use({
   "hrsh7th/nvim-cmp",
-  config = function()
-    require('cmp-pandoc-references').setup{}
-  end,
   requires = {
     { "jc-doyle/cmp-pandoc-references" }
   }
