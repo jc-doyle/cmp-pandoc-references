@@ -20,6 +20,14 @@ use({
 })
 ```
 
+Add filetype if needed:
+
+```lua
+require('cmp-pandoc-references').setup{
+  filetypes = { 'pandoc', 'markdown', 'rmd' }
+}
+```
+
 Add the source:
 
 ``` lua
