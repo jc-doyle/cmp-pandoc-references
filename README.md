@@ -14,10 +14,21 @@ Assuming Packer:
 ``` lua
 use({
   "hrsh7th/nvim-cmp",
+  config = function()
+    require('cmp-pandoc-references').setup{}
+  end,
   requires = {
     { "jc-doyle/cmp-pandoc-references" }
   }
 })
+```
+
+Add filetype if needed:
+
+```lua
+require('cmp-pandoc-references').setup{
+  filetypes = { 'pandoc', 'markdown', 'rmd' }
+}
 ```
 
 Add the source:
