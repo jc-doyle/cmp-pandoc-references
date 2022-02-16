@@ -15,7 +15,7 @@ source.get_keyword_pattern = function()
 end
 
 source.complete = function(self, request, callback)
-  local lines = vim.api.nvim_buf_get_lines(self.bufnr, 0, -1, false)
+  local lines = vim.api.nvim_buf_get_lines(self.bufnr or 0, 0, -1, false)
   local entries = refs.get_entries(lines)
 
   if entries then
