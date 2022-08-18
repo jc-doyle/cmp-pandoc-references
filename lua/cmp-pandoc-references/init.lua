@@ -7,7 +7,7 @@ end
 
 -- Add another filetype if needed
 source.is_available = function()
-	return vim.o.filetype == 'pandoc' or vim.o.filetype == 'markdown' or vim.o.filetype == 'rmd'
+	return vim.o.filetype == 'pandoc' or vim.o.filetype == 'markdown' or vim.o.filetype == 'rmd' or vim.o.filetype == 'qmd'
 end
 
 source.get_keyword_pattern = function()
