@@ -52,7 +52,13 @@ end
 -- Parses the references in the current file, formatting for completion
 local function parse_ref(lines)
 	local words = table.concat(lines, '\n')
-	for ref in words:gmatch('[({#)(#%| label: )](%a+[:%-][%w_-]+)') do
+	for ref in words:gmatch('{#(%a+[:%-][%w_-]+)') do
+		local entry = {}
+		entry.label = '@' .. ref
+		entry.kind = cmp.lsp.CompletionItemKind.Reference
+		table.insert(entries, entry)
+	end
+	for ref in words:gmatch('#| label: (%a+[:%-][%w_-]+)') do
 		local entry = {}
 		entry.label = '@' .. ref
 		entry.kind = cmp.lsp.CompletionItemKind.Reference
