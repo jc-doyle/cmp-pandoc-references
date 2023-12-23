@@ -58,8 +58,27 @@ local function parse_bib(filename)
 	end
 end
 
-local function latex_preview(str)
-  return str
+local function latex_preview(str, sep)
+  local nabla_avilable, _ = pcall(require, "nabla")
+
+  if not nabla_avilable then
+    return str
+  end
+  
+  -- undo table -> string with separator
+  str_table = {}
+  for match in str:gmatch("[^" .. sep .. "]+") do
+    str = match
+    table.insert(str_table, match)
+  end
+
+  str_table = require("nabla").gen_drawing(str_table)
+
+  if str_table == 0 then
+    return str
+  end
+
+  return table.concat(str_table, "\n")
 end
 
 -- Parses the references in the current file, formatting for completion
@@ -82,7 +101,7 @@ local function parse_ref(lines)
       local entry = {}
 
       if type == "equation" then
-        desc = latex_preview(desc)
+        desc = latex_preview(desc, "\n")
       end
 
       entry.documentation = {
